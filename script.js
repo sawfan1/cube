@@ -9,7 +9,7 @@ if (!gl) {
 }
 
 gl.viewport(0, 0, canvas.width, canvas.height);
-gl.clearColor(0.0, 0.0, 0.0, 1.0);
+gl.clearColor(0.1, 0.1, 0.1, 1.0);
 gl.clear(gl.COLOR_BUFFER_BIT);
 
 const vertexShaderSource = `
@@ -21,7 +21,7 @@ const vertexShaderSource = `
 
 const fragmentShaderSource = `
     void main(void) {
-        gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0); 
+        gl_FragColor = vec4(0.0, 0.0, 1.0, 1.0); 
     }
 `;
 
@@ -56,7 +56,7 @@ if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
 gl.useProgram(program);
 
 const vertices = new Float32Array([
-  0.0, 1.0, 0.0, -1.0, -1.0, 0.0, 1.0, -1.0, 0.0,
+  0.0, 0.5, 0.0, -0.3, -1.0, 0.0, 1.0, -1.0, 0.0,
 ]);
 
 const buffer = gl.createBuffer();
